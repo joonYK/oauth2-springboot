@@ -1,13 +1,13 @@
-package jy.study.oauth2;
+package com.jy.study.oauth2.resourceServer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Oauth2ApplicationTests {
+class ResourceServerApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }
