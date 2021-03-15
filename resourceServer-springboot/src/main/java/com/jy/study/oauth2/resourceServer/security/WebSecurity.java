@@ -15,9 +15,16 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
          * oauth2 리소스 서버 및 jwt 토큰 사용
          */
         http.authorizeRequests()
-                // GET "/users/status/check" url 대해 profile scope를 포함하는지 체크
+                // GET "/users/status/check" url 대해
                 .antMatchers(HttpMethod.GET, "/users/status/check")
-                    .hasAuthority("SCOPE_profile")
+                    //profile scope를 포함하는지 체크. authority 체크는 prefix를 붙여서 검사.
+                    //.hasAuthority("SCOPE_profile")
+
+                    //develpoer Role을 포함하는지 체크. role 체크는 prefix를 붙이지 않고 검사.
+                    .hasRole("developer")
+
+                    //여러개의 Role을 체크
+                    //.hasAnyRole("developer", "user")
                 .anyRequest().authenticated()
              .and()
                 .oauth2ResourceServer()
