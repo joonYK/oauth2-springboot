@@ -1,0 +1,15 @@
+server:
+  port: 8082
+
+spring:
+  cloud:
+    gateway:
+      # api gateway 라우트를 하나 등록한다.
+      # /users/status/check 경로로 API 게이트웨이에 GET 요청하면 게이트웨이가 http://localhost:8081 호스트로 다시 요청.
+      routes[0]:
+        id: users-status-check
+        uri: http://localhost:8081
+        predicates[0]: Path=/users/satus/check
+        predicates[1]: Method=GET
+        # 요청과 응답에 대한 수정. 요청 헤더에서 쿠키를 삭제
+        filters[0]: RemoveRequestHeader=Cookie
