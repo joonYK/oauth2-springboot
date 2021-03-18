@@ -10,7 +10,10 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtAut
 //Method Level 보안 활성화
 @EnableGlobalMethodSecurity(
         //@Secured 애노테이션 사용
-        securedEnabled = true)
+        securedEnabled = true,
+        //@PreAuthorize, @PostAuthorize 애노테이션 사용
+        prePostEnabled = true
+        )
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 
