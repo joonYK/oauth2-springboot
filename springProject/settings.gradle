@@ -1,5 +1,6 @@
 rootProject.name = 'springProject'
 include 'resourceServer'
 include 'apiGateway'
-include 'albumsResourceServer'
+include 'resourceServerAlbums'
+include 'resourceServerPhotos'
 

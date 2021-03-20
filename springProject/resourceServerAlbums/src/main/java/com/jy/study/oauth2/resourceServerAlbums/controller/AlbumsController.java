@@ -1,6 +1,6 @@
-package com.jy.study.oauth2.albumsResourceServer.controller;
+package com.jy.study.oauth2.resourceServerAlbums.controller;
 
-import com.jy.study.oauth2.albumsResourceServer.model.Album;
+import com.jy.study.oauth2.resourceServerAlbums.model.Album;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

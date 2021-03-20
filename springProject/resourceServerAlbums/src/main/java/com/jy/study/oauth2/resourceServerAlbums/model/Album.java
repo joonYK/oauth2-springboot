@@ -1,4 +1,4 @@
-package com.jy.study.oauth2.albumsResourceServer.model;
+package com.jy.study.oauth2.resourceServerAlbums.model;
 
 import lombok.Builder;
 import lombok.Getter;

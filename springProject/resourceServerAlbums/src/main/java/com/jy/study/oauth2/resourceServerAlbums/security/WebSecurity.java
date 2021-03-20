@@ -1,4 +1,4 @@
-package com.jy.study.oauth2.albumsResourceServer.security;
+package com.jy.study.oauth2.resourceServerAlbums.security;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
