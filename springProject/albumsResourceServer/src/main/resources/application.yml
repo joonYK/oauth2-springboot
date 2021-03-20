@@ -1,0 +1,14 @@
+
+server:
+  port: 8090
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # 토큰 발행하는 인증 서버 uri
+          issuer-uri: http://localhost:8080/auth/realms/appsdeveloperblog
+          # 공개키 uri
+          jwk-set-uri: http://localhost:8080/auth/realms/appsdeveloperblog/protocol/openid-connect/certs
+
