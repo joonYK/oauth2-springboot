@@ -1,8 +1,14 @@
 server:
   port: 8010
 
-# eureka client 로서의 기능 off
+# eureka server standalone 모드 설정
 eureka:
+  instance:
+    hostname: localhost
   client:
+    # eureka 서버에서 다른 eureka 클라이언트의 정보를 검색하지 않도록 적용.
     fetch-registry: false
+    # 다른 eureka 서버에 등록되지 않도록 적용.
     register-with-eureka: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
