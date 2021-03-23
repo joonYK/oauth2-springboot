@@ -4,6 +4,8 @@ server:
   port: 8081
 
 spring:
+  application:
+    name: resource-server
   security:
     oauth2:
       resourceserver:
@@ -13,3 +15,7 @@ spring:
           # 공개키 uri
           jwk-set-uri: http://localhost:8080/auth/realms/appsdeveloperblog/protocol/openid-connect/certs
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8010/eureka
