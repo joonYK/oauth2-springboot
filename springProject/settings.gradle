@@ -3,4 +3,5 @@ include 'resourceServer'
 include 'apiGateway'
 include 'resourceServerAlbums'
 include 'resourceServerPhotos'
+include 'DiscoveryService'
 

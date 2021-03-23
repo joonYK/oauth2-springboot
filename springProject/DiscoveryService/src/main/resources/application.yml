@@ -1,0 +1,8 @@
+server:
+  port: 8010
+
+# eureka client 로서의 기능 off
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
