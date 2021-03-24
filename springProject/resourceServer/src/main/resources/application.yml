@@ -15,6 +15,7 @@ spring:
           # 공개키 uri
           jwk-set-uri: http://localhost:8080/auth/realms/appsdeveloperblog/protocol/openid-connect/certs
 
+# 유레카 서버에 인스턴스로 등록하도록 유레카 서버의 주소를 명시
 eureka:
   client:
     service-url:
