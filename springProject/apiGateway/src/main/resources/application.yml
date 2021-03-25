@@ -1,14 +1,25 @@
 server:
   port: 8082
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8010/eureka
+
 spring:
+  application:
+    name: api-gateway
   cloud:
     gateway:
-      # api gateway 라우트를 하나 등록한다.
-      # /users/status/check 경로로 API 게이트웨이에 GET 요청하면 게이트웨이가 http://localhost:8081 호스트로 다시 요청.
+      # api gateway 라우트를 등록한다.
       routes:
       - id: users-status-check
-        uri: http://localhost:8081
+        # /users/status/check 경로로 API 게이트웨이에 GET 요청하면 게이트웨이가 http://localhost:8081 호스트로 다시 요청.
+        #uri: http://localhost:8081
+
+        # 로드 밸런싱을 적용하려면 lb://{eureka에 등록된 application name} 형태로 작성한다.
+        # eureka 에서 resource-server 로 된 이름의 application을 검색하고 등록된 인스턴스들을 찾아서 로드 밸런싱을 수행한다.
+        uri: lb://resource-server
         predicates:
         - Path=/users/status/check
         - Method=GET
@@ -17,7 +28,8 @@ spring:
         - RemoveRequestHeader=Cookie
 
       - id: albums
-        uri: http://localhost:8091
+        #uri: http://localhost:8091
+        url: lb://resource-server-albums
         predicates:
         - Path=/albums
         - Method=GET
@@ -25,7 +37,8 @@ spring:
         - RemoveRequestHeader=Cookie
 
       - id: photos
-        uri: http://localhost:8090
+        #uri: http://localhost:8090
+        uri: lb://resource-server-photos
         predicates:
         - Path=/photos
         - Method=GET
