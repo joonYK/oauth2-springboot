@@ -1,6 +1,8 @@
 package com.jy.study.oauth2.resourceServer.controller;
 
 import com.jy.study.oauth2.resourceServer.model.User;
+import lombok.RequiredArgsConstructor;
+import org.springframework.core.env.Environment;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -10,11 +12,15 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
+@RequiredArgsConstructor
 public class UsersController {
+
+    private final Environment environment;
 
     @GetMapping("/status/check")
     public String status() {
-        return "Working..";
+        //로드밸런싱 확인을 위해 포트 번호를 추가 반환.
+        return "Working on port : " + environment.getProperty("local.server.port");
     }
 
     //developer Role을 가진 User만 해당 api를 실행 가능.

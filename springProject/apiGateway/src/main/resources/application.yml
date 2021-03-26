@@ -29,7 +29,7 @@ spring:
 
       - id: albums
         #uri: http://localhost:8091
-        url: lb://resource-server-albums
+        uri: lb://resource-server-albums
         predicates:
         - Path=/albums
         - Method=GET
