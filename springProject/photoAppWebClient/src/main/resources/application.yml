@@ -1,2 +1,22 @@
 server:
-  port: 8007
+  port: 8087
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          mywebclient:
+            client-id: photo-app-webclient
+            client-secret: 25d1b3a7-889f-46ba-b351-a3b6ae759573
+            scope: openid, profile, roles
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8087/login/oauth2/code/mywebclient
+        provider:
+          mywebclient:
+            authorization-uri: http://localhost:8080/auth/realms/appsdeveloperblog/protocol/openid-connect/auth
+            token-uri: http://localhost:8080/auth/realms/appsdeveloperblog/protocol/openid-connect/token
+            jwk-set-uri: http://localhost:8080/auth/realms/appsdeveloperblog/protocol/openid-connect/certs
+            user-info-uri: http://localhost:8080/auth/realms/appsdeveloperblog/protocol/openid-connect/userinfo
+            user-name-attribute: preferred_username
+
