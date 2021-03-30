@@ -17,3 +17,8 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### keycloak ###
+keycloak/standalone/configuration/
+keycloak/standalone/log/
+keycloak/standalone/tmp/

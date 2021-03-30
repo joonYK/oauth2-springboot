@@ -1,12 +1,12 @@
 package com.jy.study.oauth2.photoAppWebClient.model;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Album {
 
     private String id;
