@@ -28,7 +28,7 @@ public class AlbumsController {
 
     private final OAuth2AuthorizedClientService oAuth2ClientService;
 
-    private final RestTemplate restTemplate = new RestTemplate();
+    private final RestTemplate restTemplate;
 
     @GetMapping("/albums")
     public String getAlbums(Model model, @AuthenticationPrincipal OidcUser principal) {

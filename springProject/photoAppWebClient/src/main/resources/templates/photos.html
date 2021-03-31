@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Photos page</h1>
+
+<div th:if="${photos.empty}">
+    <div>No photos found</div>
+</div>
+
+<div th:each="photo : ${photos}">
+    <div><span th:text="${photo.photoTitle}"></span></div>
+</div>
+
+</body>
+</html>
