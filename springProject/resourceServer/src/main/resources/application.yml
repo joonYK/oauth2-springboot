@@ -22,6 +22,7 @@ eureka:
     # random 값을 줘서 동일한 리소스 서버를 다른 instance 로서 여러개 등록시키기 위해 적용.
     # random 값을 지정하지 않으면 위의 server.port를 기반으로 동일한 instance id가 할당되기 떄문에 Eureka에 인스턴스가 하나만 저장된다.
     instance-id: ${spring.application.name}:${random.value}
+    hostname: localhost
   client:
     # 유레카 서버에 인스턴스로 등록하도록 유레카 서버의 주소를 명시
     service-url:

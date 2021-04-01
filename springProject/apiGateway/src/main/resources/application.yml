@@ -2,6 +2,8 @@ server:
   port: 8082
 
 eureka:
+  instance:
+    hostname: localhost
   client:
     service-url:
       defaultZone: http://localhost:8010/eureka
@@ -10,6 +12,8 @@ spring:
   application:
     name: api-gateway
   cloud:
+    discovery:
+      enabled: true
     gateway:
       # api gateway 라우트를 등록한다.
       routes:

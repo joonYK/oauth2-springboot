@@ -16,6 +16,8 @@ spring:
 
 # 유레카 서버에 인스턴스로 등록하도록 유레카 서버의 주소를 명시
 eureka:
+  instance:
+    hostname: localhost
   client:
     service-url:
       defaultZone: http://localhost:8010/eureka
