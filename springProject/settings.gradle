@@ -5,4 +5,5 @@ include 'resourceServerAlbums'
 include 'resourceServerPhotos'
 include 'DiscoveryService'
 include 'photoAppWebClient'
+include 'socialLoginWebClient'
 
