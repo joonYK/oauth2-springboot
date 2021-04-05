@@ -9,8 +9,13 @@ spring:
 #          facebook:
 #            client-id: 3847596678663991
 #            client-secret: 457b63fc966846bd06b3d3fc30674d4d
-          google:
-            client-id: 588833977624-isg6dfaohn04fcn8e2qoa0sg3ifmk1ac.apps.googleusercontent.com
-            client-secret: g8n9yqkZUj8_4_OcI-qblr2s
-
-
+#          google:
+#            client-id: 588833977624-isg6dfaohn04fcn8e2qoa0sg3ifmk1ac.apps.googleusercontent.com
+#            client-secret: g8n9yqkZUj8_4_OcI-qblr2s
+          okta:
+            client-id: 0oajlvh4v4BoO3Tgk5d6
+            client-secret: 8L_gskfJMFlcGley9jy8bAY8UlQ9wKLECCbtFbFG
+            scope: openid,profile
+        provider:
+          okta:
+            issuer-uri: https://dev-77726543.okta.com/oauth2/default
