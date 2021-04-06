@@ -6,4 +6,5 @@ include 'resourceServerPhotos'
 include 'DiscoveryService'
 include 'photoAppWebClient'
 include 'socialLoginWebClient'
+include 'spa-example'
 
