@@ -62,6 +62,42 @@
             window.open(authorizationURL, 'authorizationRequestWindow', 'width=800,height=600,left=200,top=200');
         }
 
+        function postAuthorize(state, authCode) {
+            const originalSateValue = document.getElementById('stateValue').innerHTML;
+
+            if (state === originalSateValue) {
+                requestTokens(authCode);
+            } else {
+                alert('invalid state value received');
+            }
+        }
+
+        function requestTokens(authCode) {
+            const codeVerifier = document.getElementById('codeVerifierValue').innerHTML;
+            const data = {
+                grant_type : 'authorization_code',
+                client_id : 'photo-app-PKCE-client',
+                code : authCode,
+                code_verifier : codeVerifier,
+                redirect_uri : 'http://localhost:8181/authcodeReader.html'
+            }
+
+            $.ajax({
+                beforeSend: function (request) {
+                    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded; charset=UTF-8');
+                },
+                type: 'POST',
+                url: 'http://localhost:8080/auth/realms/appsdeveloperblog/protocol/openid-connect/token',
+                data: data,
+                success: postRequestAccessToken,
+                dataType: 'json'
+            });
+        }
+
+        function postRequestAccessToken(data, status, jqXHR) {
+            document.getElementById('accessToken').innerHTML = data['access_token'];
+        }
+
     </script>
 </head>
 <body>
@@ -78,5 +114,6 @@
     <br/>
     <div><input type="button" value="Get Auth Code" onclick="getAuthCode()"/></div>
 
+    <p>Access token <span id="accessToken"></span></p>
 </body>
 </html>
