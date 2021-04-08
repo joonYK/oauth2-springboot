@@ -107,7 +107,10 @@
                     request.setRequestHeader('Authorization', "Bearer " + accessToken);
                 },
                 type: 'GET',
-                url: 'http://localhost:8082/users/status/check',
+                //url: 'http://localhost:8082/users/status/check',
+
+                //API Gateway를 경유하지 않고, ResourceServer로 바로 요청. (cors 테스트. 랜덤 port 확인 필수.)
+                url: 'http://localhost:49638/users/status/check',
                 success: postInfoFromAccessToken,
                 dataType: 'text'
             });
