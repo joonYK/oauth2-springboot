@@ -15,6 +15,15 @@ spring:
     discovery:
       enabled: true
     gateway:
+      # CORS 설정
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders:
+              - Authorization
+        add-to-simple-url-handler-mapping: true
       # api gateway 라우트를 등록한다.
       routes:
       - id: users-status-check
