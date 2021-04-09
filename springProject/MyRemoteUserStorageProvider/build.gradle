@@ -1,0 +1,6 @@
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly group: 'org.keycloak', name: 'keycloak-server-spi', version: '12.0.4'
+
+}
