@@ -8,4 +8,5 @@ include 'photoAppWebClient'
 include 'socialLoginWebClient'
 include 'spa-example'
 include 'MyRemoteUserStorageProvider'
+include 'legacyUsersWebService'
 
