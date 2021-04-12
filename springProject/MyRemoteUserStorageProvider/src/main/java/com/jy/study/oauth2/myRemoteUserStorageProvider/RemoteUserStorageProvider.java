@@ -24,9 +24,12 @@ public class RemoteUserStorageProvider implements
 
     private ComponentModel model;
 
-    public RemoteUserStorageProvider(KeycloakSession session, ComponentModel model) {
+    private UsersApiService usersApiService;
+
+    public RemoteUserStorageProvider(KeycloakSession session, ComponentModel model, UsersApiService usersApiService) {
         this.session = session;
         this.model = model;
+        this.usersApiService = usersApiService;
     }
 
     @Override
