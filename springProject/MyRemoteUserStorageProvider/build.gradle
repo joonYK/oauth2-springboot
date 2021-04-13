@@ -1,3 +1,5 @@
+jar.enabled = true;
+jar.archiveFileName.set("my-remote-mysql-user-storage-provider.jar")
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'

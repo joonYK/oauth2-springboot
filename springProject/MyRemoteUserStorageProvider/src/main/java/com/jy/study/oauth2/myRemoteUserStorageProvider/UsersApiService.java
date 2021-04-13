@@ -5,7 +5,8 @@ import javax.ws.rs.core.MediaType;
 
 @Path("/users")
 @Consumes(MediaType.APPLICATION_JSON)
-public interface UsersApiService {
+public interface
+UsersApiService {
 
     @GET
     @Path("/{username}")
